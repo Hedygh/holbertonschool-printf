@@ -1,4 +1,3 @@
-#include "main.h"
 #include<unistd.h>
 
 /**
@@ -8,7 +7,8 @@
  */
 int _putchar(char c)
 {
-	return (write(1, &c, 1));
+	write(1, &c, 1);
+	return (1);
 }
 
 /**
@@ -16,7 +16,7 @@ int _putchar(char c)
  * @str: string to print
  * Return: sum of chars printed
  */
-int _puts(char *str, int asc)
+int _puts(char *str/*, int asc*/)
 {
 	int i = 0;
 	int sum = 0;
