@@ -26,9 +26,14 @@ int main(void)
 
 	/* flag %s */
 
-	 len = _printf("String:[%s]\n", "I am a string !");
-    	len2 = printf("String:[%s]\n", "I am a string !");
+	len = _printf("String:[%s]\n", "I am a string !");
+	len2 = printf("String:[%s]\n", "I am a string !");
 	printf("len = %d et len2 = %d\n", len, len2);
+
+	/* %% */ 
+	len = _printf("Percent:[%%]\n");
+	len2 = printf("Percent:[%%]\n");
+	printf("len = %d et len 2 = %d\n", len, len2);
 
 	/* int and unsigned */
 	ui = (unsigned int)INT_MAX + 1024;
