@@ -42,22 +42,22 @@ _printf.c
 * runs through the format string
 * selects the right handler via get_flag (struct array associating format characters to functions)
 
-numbers_digits.c
+📁 numbers_digits.c
 * print_nbr: print signed integers using recursion
 * print_unsigned_nbr: print unsigned integers using recursion
 
-strings_chars.c
+📁 strings_chars.c
 * _putchar: print a single character
 * _puts: print a full string
 
-strings_chars_handlers.c
+📁 strings_chars_handlers.c
 * _print_single_char: handler for %c
 * _print_s_string: handler for %s
 
-_print_percent
+📁 _print_percent
 * handler for %% (argument ignored)
 
-main.h
+📁 main.h
 * All prototypes
 * #include directives
 * Struct definition for format handlers
