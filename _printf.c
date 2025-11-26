@@ -6,7 +6,7 @@ int (*get_flag(const char *s))(va_list)
 	f_ptf flag[] = {
 		{"c", print_single_char},
 		{"s", print_s_string},
-		/*{"%",     	 },*/
+		{"%", print_percent},
 		{"d", print_di_nbr},
 		{"i", print_di_nbr},
 		{"u", print_u_nbr},

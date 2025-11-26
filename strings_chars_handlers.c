@@ -21,3 +21,10 @@ int print_s_string(va_list ap)
 		return (_puts("(null)"));
 	return (_puts(str));
 }
+
+int print_percent(va_list ap)
+{
+	(void)ap;
+
+	return (_putchar('%'));
+}
