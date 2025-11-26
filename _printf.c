@@ -5,10 +5,11 @@ int (*get_flag(const char *s))(va_list)
 {
 	f_ptf flag[] = {
 		{"c", print_single_char},
-		/*	{"s", },
-			{"%", },
-			{"d", },
-			{"i", } */
+		{"s",     	 },
+		{"%",     	 },
+		{"d", print_di_nbr},
+		{"i", print_di_nbr},
+		{"u", print_u_nbr},
 		{NULL, NULL}
 	};
 	int i = 0;
@@ -27,7 +28,7 @@ int _printf(const char *format, ...)
 	int sum = 0, i = 0;
 	int (*f)(va_list);
 
-	if (!format || format[i] == '%' && format[i + 1] == '\0')
+	if ((!format) || (format[i] == '%' && format[i + 1] == '\0'))
 		return (-1);
 
 	va_start(ap, format);
@@ -39,7 +40,7 @@ int _printf(const char *format, ...)
 		{
 			f = NULL;
 			if (format[i + 1] != '\0')
-			f = get_flag(&format[i + 1]); // ici on avance pas
+				f = get_flag(&format[i + 1]); // ici on avance pas
 			if (f == NULL)
 			{
 				_putchar(format[i]);
