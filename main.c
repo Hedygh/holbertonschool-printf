@@ -21,8 +21,14 @@ int main(void)
 	/* flag %c */
 	len = _printf("hello, %c, %c, salut\n", 'o', 'a');
 	len2 = printf("hello, %c, %c, salut\n", 'o', 'a');
-	printf("%d\n", len);
+	_printf("%d\n", len);
 	printf("%d\n", len2);
+
+	/* flag %s */
+
+	 len = _printf("String:[%s]\n", "I am a string !");
+    	len2 = printf("String:[%s]\n", "I am a string !");
+	printf("len = %d et len2 = %d\n", len, len2);
 
 	/* int and unsigned */
 	ui = (unsigned int)INT_MAX + 1024;
