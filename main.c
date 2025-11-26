@@ -49,5 +49,16 @@ int main(void)
 	_printf("Length:[%d, %i]\n", len, len);
 	printf("Length:[%d, %i]\n", len2, len2);
 
+	/* rot13 */
+
+	_printf("hello%R\n", "hello");
+
+	/* unprintable */
+       char s[] = "Hi\n\tOK\x01\x7F!";
+
+	_printf("With %%S      : %S\n", s);
+
+	/* binary */
+	_printf("%b\n", 55);
 	return 0;
 }

@@ -1,4 +1,5 @@
 #include<unistd.h>
+#include "main.h"
 
 /**
  * _putchar - Uses write to print a char c
@@ -16,7 +17,7 @@ int _putchar(char c)
  * @str: string to print
  * Return: sum of chars printed
  */
-int _puts(char *str/*, int asc*/)
+int _puts(char *str)
 {
 	int i = 0;
 	int sum = 0;
@@ -26,6 +27,32 @@ int _puts(char *str/*, int asc*/)
 		_putchar(str[i]);
 		i++;
 		sum++;
+	}
+	return (sum);
+}
+
+int _puts_unprintable(char *str)
+{
+	int i = 0, sum = 0;
+	char *hex;
+
+	if (!str)
+		return (_puts("(null)"));
+
+	while (str[i])
+	{
+		if ((str[i] >= 0 && str[i] < 32) || str[i] >= 127) /* bloc format \xHH */
+		{
+			hex = convert_base((unsigned char)str[i], 16, 1); /* Conv en base 16 de la valeur ascii du char */
+			sum += _puts("\\x");      /* format \x */
+			if (str[i] < 16)
+				sum += _putchar('0'); /* ajout 0 pour char < 16 */
+			sum += _puts(hex);
+			free(hex);
+		}
+		else
+			sum += _putchar(str[i]);
+		i++;
 	}
 	return (sum);
 }

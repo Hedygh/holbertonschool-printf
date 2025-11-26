@@ -1,6 +1,10 @@
 #include "main.h"
 
-/* get_flag takes s as argument, and return a function that takes va_list as argument */
+/**
+ * get_flag - compare the char after % with s from struct
+ * @s: string after % to compare
+ * Return: pointer to function that match the string
+ */
 int (*get_flag(const char *s))(va_list)
 {
 	f_ptf flag[] = {
@@ -10,6 +14,9 @@ int (*get_flag(const char *s))(va_list)
 		{"d", print_di_nbr},
 		{"i", print_di_nbr},
 		{"u", print_u_nbr},
+		{"R", print_R_rot13},
+		{"S", print_S_unprintable},
+		{"b", print_b_nbr},
 		{NULL, NULL}
 	};
 	int i = 0;
@@ -21,7 +28,13 @@ int (*get_flag(const char *s))(va_list)
 		i++;
 	}
 	return (NULL);
-}	
+}
+
+/**
+ * _printf - Main loop exploring the argument to _printf
+ * @format: the string given to _printf
+ * Return: count of the printed chars
+ */
 int _printf(const char *format, ...)
 {
 	va_list ap;
@@ -35,12 +48,11 @@ int _printf(const char *format, ...)
 
 	while (format[i])
 	{
-		/* CAS OU ON TROUVE % */
 		if (format[i] == '%')
 		{
 			f = NULL;
 			if (format[i + 1] != '\0')
-				f = get_flag(&format[i + 1]); // ici on avance pas
+				f = get_flag(&format[i + 1]);
 			if (f == NULL)
 			{
 				_putchar(format[i]);
@@ -50,10 +62,9 @@ int _printf(const char *format, ...)
 			else
 			{
 				sum += f(ap);
-				i += 2; // ici on avance de 2 pour passer %c
+				i += 2;
 			}
 		}
-		/* CAS OU ON ECRIS NORMALEMENt */
 		else
 		{
 			_putchar(format[i]);
