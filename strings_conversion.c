@@ -1,5 +1,10 @@
 #include "main.h"
 
+/**
+ * rot13_conversion - convert string with rot13 algorithm
+ * @str: string to convert
+ * Return: converted string
+ */
 char *rot13_conversion(char *str)
 {
 	char *rot;
@@ -26,6 +31,12 @@ char *rot13_conversion(char *str)
 	return (rot);
 }
 
+/**
+ * convert_int_to_c - convert int value to char value
+ * @n: int value
+ * @maj: upper or lower case indicator
+ * Return: converted int
+ */
 int convert_int_to_c(int n, int maj)
 {
 	if (n >= 10)
@@ -35,10 +46,17 @@ int convert_int_to_c(int n, int maj)
 	else
 		return (n - 10 + 'a');
 	}
-	else 
+	else
 		return (n + '0');
 }
 
+/**
+ * convert_base - convert a number to a string using a base
+ * @n: int to conv
+ * @b: base to use
+ * @maj: upper or lower indicator
+ * Return: converted final string
+ */
 char *convert_base(unsigned long n, unsigned int b, int maj)
 {
 	unsigned long tmp = n;
@@ -63,4 +81,3 @@ char *convert_base(unsigned long n, unsigned int b, int maj)
 	}
 	return (str);
 }
-
