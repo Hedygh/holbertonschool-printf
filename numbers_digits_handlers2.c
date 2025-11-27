@@ -12,7 +12,7 @@ int print_X_nbr(va_list ap)
 	char *s;
 	unsigned int n = va_arg(ap, unsigned int);
 
-	s = convert_base(n, 16, 0);
+	s = convert_base(n, 16, 1);
 	if (!s)
 		return (0);
 	sum += _puts(s);
