@@ -17,6 +17,9 @@ int (*get_flag(const char *s))(va_list)
 		{"R", print_R_rot13},
 		{"S", print_S_unprintable},
 		{"b", print_b_nbr},
+		{"o", print_o_nbr},
+		{"x", print_x_nbr},
+		{"X", print_X_nbr},
 		{NULL, NULL}
 	};
 	int i = 0;

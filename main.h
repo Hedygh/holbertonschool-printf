@@ -29,7 +29,9 @@ int print_b_nbr(va_list ap);
 /*  handling va_arg */
 int print_di_nbr(va_list ap);
 int print_u_nbr(va_list ap);
-
+int print_o_nbr(va_list ap);
+int print_x_nbr(va_list ap);
+int print_X_nbr(va_list ap);
 /**
  * struct flag_ptf - struct to match %c with *f
  * @s: char to match

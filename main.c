@@ -60,5 +60,10 @@ int main(void)
 
 	/* binary */
 	_printf("%b\n", 55);
-	return 0;
+	/* octal and hexa */
+	_printf("Unsigned octal:[%o]\n", ui);
+    printf("Unsigned octal:[%o]\n", ui);
+    _printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
+    printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
+    return (0);
 }

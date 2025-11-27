@@ -41,3 +41,41 @@ int print_b_nbr(va_list ap)
 	sum += _puts(s);
 	return (sum);
 }
+
+/**
+ * print_o_nbr - handle o flag
+ * @ap: list of arg
+ * Description: convert value to octal
+ * Return: number of printed chars
+ */
+int print_o_nbr(va_list ap)
+{
+	int sum = 0;
+	char *s;
+	unsigned int n = va_arg(ap, unsigned int);
+
+	s = convert_base(n, 8, 0);
+	if (!s)
+		return (0);
+	sum += _puts(s);
+	return (sum);
+}
+
+/**
+ * print_x_nbr - handle x flag
+ * @ap: list of arg
+ * Description: convert value to hexa
+ * Return: number of printed chars
+ */
+int print_x_nbr(va_list ap)
+{
+	int sum = 0;
+	char *s;
+	unsigned int n = va_arg(ap, unsigned int);
+
+	s = convert_base(n, 16, 0);
+	if (!s)
+		return (0);
+	sum += _puts(s);
+	return (sum);
+}
