@@ -34,7 +34,7 @@ int print_b_nbr(va_list ap)
 	char *s;
 
 	if (n == 0)
-		return (_puts("0") + 1);
+		return (_puts("0"));
 	s = convert_base(n, 2, 0);
 	if (!s)
 		return (0);
