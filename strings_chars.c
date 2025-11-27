@@ -3,7 +3,7 @@
 
 /**
  * _putchar - Uses write to print a char c
- * @c: char to print
+ * @c: char to prnt
  * Return: 1
  */
 int _putchar(char c)
