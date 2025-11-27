@@ -31,6 +31,11 @@ int _puts(char *str)
 	return (sum);
 }
 
+/**
+ * _puts_unprintable - print special char with \\xHH format
+ * @str: string to print
+ * Return: sum of printed chars
+ */
 int _puts_unprintable(char *str)
 {
 	int i = 0, sum = 0;
@@ -43,7 +48,7 @@ int _puts_unprintable(char *str)
 	{
 		if ((str[i] >= 0 && str[i] < 32) || str[i] >= 127) /* bloc format \xHH */
 		{
-			hex = convert_base((unsigned char)str[i], 16, 1); /* Conv en base 16 de la valeur ascii du char */
+			hex = convert_base((unsigned char)str[i], 16, 1);/*valeur ascii du char*/
 			sum += _puts("\\x");      /* format \x */
 			if (str[i] < 16)
 				sum += _putchar('0'); /* ajout 0 pour char < 16 */
@@ -57,6 +62,11 @@ int _puts_unprintable(char *str)
 	return (sum);
 }
 
+/**
+ * _strlen - lenght of string
+ * @s: string
+ * Return: lenght value
+ */
 int _strlen(char *s)
 {
 	int i = 0;
