@@ -61,3 +61,6 @@ _printf.c
 * All prototypes
 * #include directives
 * Struct definition for format handlers
+
+
+![Flowchart](./flowchart.png)
